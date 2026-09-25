@@ -1,0 +1,19 @@
+{
+  "name": "crm-bitrix24-inspired",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace apps/api\" \"npm run dev --workspace apps/web\"",
+    "build": "npm run build --workspace apps/api && npm run build --workspace apps/web",
+    "lint": "npm run lint --workspace apps/api && npm run lint --workspace apps/web",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1",
+    "prettier": "^3.4.2"
+  }
+}
